@@ -823,21 +823,23 @@ namespace UnityGLTF
 				}
 			}
 
-			if (material.HasProperty("_Metallic"))
-			{
-				pbr.MetallicFactor = material.GetFloat("_Metallic");
-			}
+            if (material.HasProperty("_Metallic"))
+            {
+                //pbr.MetallicFactor = material.GetFloat("_Metallic");
+                pbr.MetallicFactor = 1.0f;
+            }
 
-			if (material.HasProperty("_Roughness"))
+            /*if (material.HasProperty("_Roughness"))
 			{
-				pbr.RoughnessFactor = material.GetFloat("_Roughness");
-			}
+                //pbr.RoughnessFactor = material.GetFloat("_Roughness");
+                pbr.RoughnessFactor = 1.0f;
+            }
 			else if (material.HasProperty("_Glossiness"))
 			{
-				pbr.RoughnessFactor = 1.0 - material.GetFloat("_Glossiness");
-			}
+				pbr.RoughnessFactor = 1 - material.GetFloat("_Glossiness");
+			}*/
 
-			if (material.HasProperty("_MetallicRoughnessMap"))
+            if (material.HasProperty("_MetallicRoughnessMap"))
 			{
 				var mrTex = material.GetTexture("_MetallicRoughnessMap");
 
